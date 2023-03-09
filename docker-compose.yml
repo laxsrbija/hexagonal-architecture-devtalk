@@ -1,0 +1,18 @@
+version: '3.9'
+services:
+  mongo:
+    image: mongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: mongo
+      MONGO_INITDB_ROOT_PASSWORD: mongo
+      MONGO_INITDB_DATABASE: greeting-mongo
+    ports:
+      - "27017:27017"
+  postgres:
+    image: postgres:14.5
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: greeting-postgres
+    ports:
+      - "5432:5432"

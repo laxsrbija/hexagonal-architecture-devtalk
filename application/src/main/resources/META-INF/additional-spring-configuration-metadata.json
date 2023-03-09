@@ -1,0 +1,9 @@
+{
+  "properties": [
+    {
+      "name": "greeting.database",
+      "type": "java.lang.String",
+      "description": "Database type to use."
+    }
+  ]
+}
