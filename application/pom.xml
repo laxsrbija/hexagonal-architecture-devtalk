@@ -3,28 +3,28 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>net.lazars</groupId>
-    <artifactId>greeting</artifactId>
+    <groupId>net.lazars.greeting</groupId>
+    <artifactId>greeting-parent</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
-  <artifactId>greeting-application</artifactId>
+  <artifactId>application</artifactId>
   <name>application</name>
 
   <dependencies>
     <dependency>
-      <groupId>net.lazars</groupId>
+      <groupId>net.lazars.greeting</groupId>
       <artifactId>mongo-adapter</artifactId>
       <version>${project.version}</version>
     </dependency>
     <dependency>
-      <groupId>net.lazars</groupId>
+      <groupId>net.lazars.greeting</groupId>
       <artifactId>postgres-adapter</artifactId>
       <version>${project.version}</version>
     </dependency>
     <dependency>
-      <groupId>net.lazars</groupId>
+      <groupId>net.lazars.greeting</groupId>
       <artifactId>web-adapter</artifactId>
       <version>${project.version}</version>
     </dependency>

@@ -11,8 +11,8 @@
     <relativePath/> <!-- lookup parent from repository -->
   </parent>
 
-  <groupId>net.lazars</groupId>
-  <artifactId>greeting</artifactId>
+  <groupId>net.lazars.greeting</groupId>
+  <artifactId>greeting-parent</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>greeting</name>
   <packaging>pom</packaging>
