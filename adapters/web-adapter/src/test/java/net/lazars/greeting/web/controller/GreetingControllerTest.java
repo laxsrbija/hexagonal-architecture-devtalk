@@ -5,6 +5,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import java.util.List;
+import java.util.UUID;
 import net.lazars.greeting.core.model.User;
 import net.lazars.greeting.core.port.inbound.UserCreationService;
 import net.lazars.greeting.web.ControllerTest;
@@ -33,6 +34,14 @@ class GreetingControllerTest {
   }
 
   @Test
+  void shouldReturn404InsteadOfName_WhenUserDoesNotExist() throws Exception {
+    mockMvc
+        .perform(get("/greet/{id}", UUID.randomUUID().toString()))
+        .andExpect(status().isNotFound())
+        .andExpect(content().string(""));
+  }
+
+  @Test
   void shouldGreetByNickName() throws Exception {
     userCreationService.saveAll(List.of(USER));
 
@@ -41,5 +50,13 @@ class GreetingControllerTest {
         .andExpect(status().isOk())
         .andExpect(
             content().string("<h1>Hello, <span>" + USER.nicknames().get(0) + "</span>!</h1>"));
+  }
+
+  @Test
+  void shouldReturn404InsteadOfNickName_WhenUserDoesNotExist() throws Exception {
+    mockMvc
+        .perform(get("/greet/{id}/nickname", UUID.randomUUID().toString()))
+        .andExpect(status().isNotFound())
+        .andExpect(content().string(""));
   }
 }
